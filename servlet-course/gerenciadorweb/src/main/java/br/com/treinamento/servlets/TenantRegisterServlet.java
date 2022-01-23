@@ -17,18 +17,18 @@ public class TenantRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
-		Tenant tenant = new Tenant();
-		tenant.setName(name);
+		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			String name = req.getParameter("name");
+			Tenant tenant = new Tenant();
+			tenant.setName(name);
 
-		Banco banco = new Banco();
-		banco.save(tenant);
+			Banco banco = new Banco();
+			banco.save(tenant);
 
-		//Redireciona para o JSP de sucesso no cadastro.
-		RequestDispatcher rd = req.getRequestDispatcher("successregister.jsp");
-		req.setAttribute("name", tenant.getName());
-		rd.forward(req, resp);
-	}
+			//Redireciona para o jps de sucesso no cadastro
+			RequestDispatcher rd = req.getRequestDispatcher("successregister.jsp");
+			req.setAttribute("name", tenant.getName());
+			rd.forward(req, resp);
+		}
 	
 }
