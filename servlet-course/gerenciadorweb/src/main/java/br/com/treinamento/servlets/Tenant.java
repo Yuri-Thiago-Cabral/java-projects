@@ -5,7 +5,6 @@ public class Tenant {
 	private Integer id;
 	private String name;
 
-
     public Integer getId() {
         return id;
     }
