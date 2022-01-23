@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ListTenantsServlet
- */
 @WebServlet("/listAllTenants")
 public class ListTenantsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,12 +19,10 @@ public class ListTenantsServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Banco banco = new Banco();
 		List<Tenant> list = banco.getTenants();
-		
-		PrintWriter out = response.getWriter();
-		
-		for (Tenant t : list) {
-			out.println(String.format("<h1>%s</h1>", t.getName()));
-		}
+				
+		request.setAttribute("tenants", list);
+		RequestDispatcher rd = request.getRequestDispatcher("list-tenants.jsp");
+		rd.forward(request, response);
 	}
 
 }
