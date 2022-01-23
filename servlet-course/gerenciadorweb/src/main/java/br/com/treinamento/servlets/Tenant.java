@@ -2,8 +2,8 @@ package br.com.treinamento.servlets;
 
 public class Tenant {
 
-	private Integer id;
-	private String name;
+    private Integer id;
+    private String name;
 
     public Integer getId() {
         return id;
