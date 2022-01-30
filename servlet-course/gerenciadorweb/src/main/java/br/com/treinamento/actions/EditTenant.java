@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class EditTenant {
 
-    public void execute(HttpServletRequest req, HttpServletResponse resp)
+    public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String cnpj = req.getParameter("cnpj");
@@ -34,6 +34,6 @@ public class EditTenant {
         tenant.setCnpj(cnpj);
         tenant.setDate(convertDate);
 
-        resp.sendRedirect("application?action=listTenants");
+        return "redirect:application?action=listTenants";
     }
 }

@@ -10,34 +10,36 @@ public class Tenant {
     private Date date = new Date();
 
     public Integer getId() {
-        return id;
-    }
+            return id;
+        }
 
     public void setId(Integer id) {
-        this.id = id;
-    }
+            this.id = id;
+        }
 
     public String getName() {
-        return name;
-    }
+            return name;
+        }
 
     public void setName(String name) {
-        this.name = name;
-    }
+            this.name = name;
+        }
 
     public String getCnpj() {
-        return cnpj;
-    }
+            return cnpj;
+        }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
+            this.cnpj = cnpj;
+        }
 
     public Date getDate() {
-        return date;
-    }
+            return date;
+        }
 
     public void setDate(Date date) {
-        this.date = date;
-    }
+            this.date = date;
+        }
+
 }
+

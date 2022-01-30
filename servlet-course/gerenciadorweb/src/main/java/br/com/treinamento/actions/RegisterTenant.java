@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class RegisterTenant {
 
-    public void execute(HttpServletRequest req, HttpServletResponse resp)
+    public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         String name = req.getParameter("name");
         String cnpj = req.getParameter("cnpj");
@@ -38,7 +38,8 @@ public class RegisterTenant {
 
         req.setAttribute("name", tenant.getName());
         req.setAttribute("cnpj", tenant.getCnpj());
-        resp.sendRedirect("application?action=listTenants");
+
+        return "redirect:application?action=listTenants";
     }
 
 }
